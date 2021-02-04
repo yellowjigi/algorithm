@@ -38,11 +38,13 @@ public:
                 s.diff = height[i - 1] - height[i];
                 s.index = i;
                 st.push(s);
-            } else if (height[i - 1] == height[i]) {
+            }
+	    else if (height[i - 1] == height[i]) {
                 // Nothing to do.
                 // TODO: further explanation
                 continue;
-            } else { // height[i - 1] < height[i]
+            }
+	    else { // height[i - 1] < height[i]
                 // We can calculate water trapped so far.
                 diff = height[i] - height[i - 1];
 
@@ -71,7 +73,8 @@ public:
 
                         // The current diff has been consumed completely. Break.
                         break;
-                    } else if (diff == s.diff) {
+                    }
+		    else if (diff == s.diff) {
                         // Same as above (*)
                         water += diff * (i - s.index);
 
@@ -80,7 +83,8 @@ public:
 
                         // The current diff has been consumed completely. Break.
                         break;
-                    } else { // diff > s.diff
+                    }
+		    else { // diff > s.diff
                         // Same as above (*) except that we now calculate the amount
                         // of the water with the diff of the item popped from the stack,
                         // not with the current diff; also, we update the current diff
@@ -107,7 +111,7 @@ int main(void) {
 
     // LeetCode test cases from the problem
     int c[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
-    //int c[] = { 4,2,0,3,2,5 };
+    //int c[] = { 4, 2, 0, 3, 2, 5 };
 
     vector<int> height(c, c + (sizeof c / sizeof c[0]));
 

@@ -30,9 +30,11 @@ public:
                 s.diff = height[i - 1] - height[i];
                 s.index = i;
                 st.push(s);
-            } else if (height[i - 1] == height[i]) {
+            }
+	    else if (height[i - 1] == height[i]) {
                 continue;
-            } else {
+            }
+	    else {
                 diff = height[i] - height[i - 1];
 
                 while (!st.empty()) {
@@ -44,10 +46,12 @@ public:
                         s.diff -= diff;
                         st.push(s);
                         break;
-                    } else if (diff == s.diff) {
+                    }
+		    else if (diff == s.diff) {
                         water += diff * (i - s.index);
                         break;
-                    } else {
+                    }
+		    else {
                         water += s.diff * (i - s.index);
                         diff -= s.diff;
                     }
@@ -64,7 +68,7 @@ int main(void) {
     int water;
 
     int c[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
-    //int c[] = { 4,2,0,3,2,5 };
+    //int c[] = { 4, 2, 0, 3, 2, 5 };
 
     vector<int> height(c, c + (sizeof c / sizeof c[0]));
 
