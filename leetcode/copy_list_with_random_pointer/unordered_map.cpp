@@ -72,6 +72,7 @@ public:
 
 #define EXAMPLE 1
 
+vector<int> buildRandoms(Node* node);
 void printNodes(string title, Node* node, vector<int> randoms);
 
 int main() {
@@ -109,9 +110,39 @@ int main() {
 
     node = s.copyRandomList(node);
 
-    printNodes("Output", node, s.randoms);
+    printNodes("Output", node, buildRandoms(node));
 
     return 0;
+}
+
+vector<int> buildRandoms(Node* head) {
+	vector<int> randoms;
+	Node* node, * random_pointer, * temp;
+	int i;
+	
+	node = head;
+	while (node) {
+		random_pointer = node->random;
+		if (random_pointer != NULL) {
+			temp = node;
+			node = head;
+			i = 0;
+			while (node != random_pointer) {
+				node = node->next;
+				++i;
+			}
+			node = temp;
+			
+			randoms.push_back(i);
+		}
+		else {
+			randoms.push_back(-1);
+		}
+		
+		node = node->next;
+	}
+	
+	return randoms;
 }
 
 void printNodes(string title, Node* head, vector<int> randoms) {
