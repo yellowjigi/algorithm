@@ -42,7 +42,7 @@ public:
 
 #define EXAMPLE 1
 
-void printTreeNodes(TreeNode* root, int node_size);
+void printTreeNodes(string title, TreeNode* root, int node_size);
 
 int main() {
     Solution s;
@@ -85,19 +85,19 @@ int main() {
         root = &nodes[0];
     }
 
-    printTreeNodes(root, n);
+    printTreeNodes("Input", root, n);
 
     root = s.convertBST(root);
 
-    printTreeNodes(root, n);
+    printTreeNodes("Output", root, n);
 
     return 0;
 }
 
-void printTreeNodes(TreeNode* root, int node_size) {
+void printTreeNodes(string title, TreeNode* root, int node_size) {
     queue<TreeNode*> q;
 
-    cout << "Input: [";
+    cout << title << ": [";
     if (root) {
         q.push(root);
         while (!q.empty()) {
