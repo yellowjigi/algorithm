@@ -116,33 +116,33 @@ int main() {
 }
 
 vector<int> buildRandoms(Node* head) {
-	vector<int> randoms;
-	Node* node, * random_pointer, * temp;
-	int i;
+    vector<int> randoms;
+    Node* node, * random_pointer, * temp;
+    int i;
 	
-	node = head;
-	while (node) {
-		random_pointer = node->random;
-		if (random_pointer != NULL) {
-			temp = node;
-			node = head;
-			i = 0;
-			while (node != random_pointer) {
-				node = node->next;
-				++i;
-			}
-			node = temp;
-			
-			randoms.push_back(i);
-		}
-		else {
-			randoms.push_back(-1);
-		}
-		
-		node = node->next;
-	}
-	
-	return randoms;
+    node = head;
+    while (node) {
+        random_pointer = node->random;
+        if (random_pointer != NULL) {
+            temp = node;
+            node = head;
+            i = 0;
+            while (node != random_pointer) {
+                node = node->next;
+                ++i;
+            }
+            node = temp;
+
+            randoms.push_back(i);
+        }
+        else {
+            randoms.push_back(-1);
+        }
+
+        node = node->next;
+    }
+
+    return randoms;
 }
 
 void printNodes(string title, Node* head, vector<int> randoms) {
