@@ -2,7 +2,7 @@
 //  2021-02-20
 //  LeetCode
 //  138. Copy List with Random Pointer
-//  Accepted (Runtime 40%, Memory 50%)
+//  Accepted
 
 #include <iostream>
 #include <vector>
@@ -33,12 +33,13 @@ public:
         vector<Node*> new_nodes;
         vector<int> randoms;
         unordered_map<Node*, int> hash_table;
-        int i;
+        int i, index;
 
         if (head == NULL) {
             return NULL;
         }
 
+        // First pass:
         node = head;
         i = 0;
         while (node) {
@@ -48,17 +49,15 @@ public:
             ++i;
         }
 
+        // Second pass:
         node = head;
         while (node) {
-            if (node->random == NULL) {
-                randoms.push_back(-1);
-            }
-            else {
-                randoms.push_back(hash_table[node->random]);
-            }
+            index = node->random == NULL ? -1 : hash_table[node->random];
+            randoms.push_back(index);
             node = node->next;
         }
 
+        // Third pass:
         for (i = 0; i < new_nodes.size() - 1; ++i) {
             new_nodes[i]->next = new_nodes[i + 1];
             new_nodes[i]->random = randoms[i] == -1 ? NULL : new_nodes[randoms[i]];
