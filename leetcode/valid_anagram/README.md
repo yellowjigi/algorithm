@@ -1,3 +1,8 @@
+## TODO
+
+* Implement a simpler version of the key-value approach, not using the unordered_map container but using an array.
+* Improve the readability also.
+
 ## Brief Description
 
 ### sort.cpp
