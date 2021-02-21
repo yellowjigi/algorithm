@@ -5,7 +5,7 @@
 
 ## Pros & cons of each algorithm
 
-### modifying_input.c
+### modifying_input.cpp
 
 #### Pros
 
