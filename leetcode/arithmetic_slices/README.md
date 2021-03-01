@@ -14,4 +14,5 @@
 <p align="center">
   <img src="https://latex.codecogs.com/svg.latex?\frac{(n-1)(n-2)}{2}">
 </p>
+
 * *Resume*: reset `count` to `2` and advance the `for` loop to repeat the cycle.
