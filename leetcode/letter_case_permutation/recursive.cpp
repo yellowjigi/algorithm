@@ -2,7 +2,7 @@
 //  2021-03-01
 //  LeetCode
 //  784. Letter Case Permutation
-//  
+//  Accepted
 
 #include <iostream>
 #include <string>
