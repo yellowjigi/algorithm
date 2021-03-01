@@ -9,7 +9,7 @@
 ### naive_tle.cpp
 
 * This is a *Time Limit Exceeded (TLE)* version.
-* It uses a typical brute force approach with two nested `for` loops and examine every case.
+* It uses a typical brute force approach with two nested `for` loops which examines every case.
 
 ### one_pointer_tle.cpp
 
