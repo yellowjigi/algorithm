@@ -11,7 +11,7 @@
 * For each element in sorted `dictionary`, if it can be extracted from the given string `s`, then we are done.
 	* To achieve this, we just search through `s` for every character of each target string `dictionary[i]`.
 	* In case `dictionary[i]` is longer than `s`, we `continue` to the next loop because it is obviously impossible for it to be the answer.
-	* If every character of `dictionary[i]` is found from `s`, we assign it to `result` and immediately break out of the loop.
+	* If every character of `dictionary[i]` is found from `s`, we return it immediately breaking out of the loop.
 	* This will produce a valid result because `dictionary` has been sorted as mentioned above.
 
 #### Differences
