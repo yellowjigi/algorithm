@@ -1,6 +1,8 @@
 ## Brief Description
 
-### sort_and_find.cpp
+### sort_and_compare.cpp & sort_and_find.cpp
+
+#### Common features
 
 * It's a two-step "sort and find" strategy with low performance.
 * Sort `dictionary` using a custom comparing function `comp`.
@@ -11,3 +13,7 @@
 	* In case `dictionary[i]` is longer than `s`, we `continue` to the next loop because it is obviously impossible for it to be the answer.
 	* If every character of `dictionary[i]` is found from `s`, we assign it to `result` and immediately break out of the loop.
 	* This will produce a valid result because `dictionary` has been sorted as mentioned above.
+
+#### Differences
+
+* When searching `s` for the characters of `dictionary[i]`, sort_and_compare.cpp compares the characters index by index whereas sort_and_find.cpp utilizes the `string::find` function.
