@@ -4,7 +4,7 @@
 
 #### Common features
 
-* It's a two-step "sort and find" strategy with low performance.
+* Both of them employ two-step "sort and find" strategies with relatively low performance.
 * Sort `dictionary` using a custom comparing function `comp`.
 	* It sorts `dictionary` in longer-string-first order where in each set of the strings of the same length they are sorted in alphabetical order.
 	* For example, ["a", "aa", "ab", "ac", "abc"] would become ["abc", "aa", "ab", "ac", "a"].
@@ -16,4 +16,4 @@
 
 #### Differences
 
-* When searching `s` for the characters of `dictionary[i]`, sort_and_compare.cpp compares the characters index by index whereas sort_and_find.cpp utilizes the `string::find` function.
+* When searching `s` for the characters of `dictionary[i]`, **sort_and_compare.cpp** compares the characters index by index whereas **sort_and_find.cpp** utilizes the `string::find` function.
