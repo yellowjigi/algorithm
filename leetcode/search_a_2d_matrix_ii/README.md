@@ -9,7 +9,7 @@
 
 * Starting from the top-right corner of `matrix`, do one of the following:
 	* If the number is less than `target`, move one row downward as all other numbers of the row are also less than it;
-	* if the number is greater than `target`, move one column leftward as all other numbers of the column are also less than it;
+	* if the number is greater than `target`, move one column leftward as all other numbers of the column are also greater than it;
 	* if the number is equal to `target`, return `true` as we found it;
 	* if either the row or column index is out of the range of `matrix`, return `false` as we could not find it.
 * Time complexity: O(M + N) where M and N denote the same as above.
