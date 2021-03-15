@@ -23,27 +23,24 @@ public:
     ListNode* swapNodes(ListNode* head, int k) {
         ListNode* node;
         int count;
-        int val, * valp;
+        int val, * valp = nullptr;
 
         // First pass
-        node = head;
         count = 0;
-        while (node != nullptr) {
-            ++count;
-            if (count == k) {
+        for (node = head; node != nullptr; node = node->next) {
+            if (++count == k) {
                 val = node->val;
                 valp = &(node->val);
             }
-            node = node->next;
         }
 
         // Second pass
-        node = head;
-        while (count > k) {
-            --count;
-            node = node->next;
+        for (node = head; node != nullptr; node = node->next) {
+            if (count-- == k) {
+                break;
+            }
         }
-        
+
         // Swap
         *valp = node->val;
         node->val = val;
