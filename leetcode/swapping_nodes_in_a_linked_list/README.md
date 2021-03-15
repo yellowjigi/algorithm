@@ -9,7 +9,8 @@
 * During the second pass:
 	* Rewind `node` to point to `head`.
 	* Advance `node` and decrement `count` until `count` becomes `k`.
-	* Now assign `node->val` to the value `valp` points to.
+* Now swap:
+	* Assign `node->val` to the value `valp` points to.
 	* Also assign `val` to `node->val`.
 	
 ### two_pass_pointer_clear.cpp
