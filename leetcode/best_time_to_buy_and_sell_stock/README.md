@@ -2,6 +2,7 @@
 
 ### brute_force.cpp
 
+* This is a *Time Limit Exceeded (TLE)* version.
 * The most naive and intuitive method.
 * Search every possible case for the maximum profit using nested `for` loops.
 
