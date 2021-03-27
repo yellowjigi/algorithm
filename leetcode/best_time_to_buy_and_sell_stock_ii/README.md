@@ -8,7 +8,7 @@
 
 * The most intuitive method.
 * First find the point for `buy` that is the local minimum price (i.e., a valley).
-* Then find the point for `sell`, that is the local maximum price (i.e., a peak).
+* Then find the point for `sell` that is the local maximum price (i.e., a peak).
 * For every pair of `buy` and `sell` found, add `sell - buy` to `max_profit`.
 * Return `max_profit`.
 
