@@ -71,7 +71,7 @@ public:
         count[7] = um['s'];
         decrementChars(um, "seven", count[7]);
         
-        // 'n'ine
+        // n'i'ne
         count[9] = um['i'];
         decrementChars(um, "nine", count[9]);
         
