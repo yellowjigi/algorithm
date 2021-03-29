@@ -2,7 +2,7 @@
 //  2021-03-29
 //  LeetCode
 //  188. Best Time to Buy and Sell Stock IV
-//  
+//  Accepted
 
 #include <iostream>
 #include <vector>
@@ -13,10 +13,14 @@ class Solution {
 public:
     int maxProfit(int k, vector<int>& prices) {
         int i, j;
-        vector<vector<int>> dp(k + 1, vector<int>(prices.size()));
+        vector<vector<int>> dp(k + 1, vector<int>(prices.size())); // k + 1 including the case of 0 transaction
         int max_balance_after_buying;
         
-        for (i = 1; i < k + 1; ++i) {
+        if (k == 0 || prices.size() == 0) {
+            return 0;
+        }
+        
+        for (i = 1; i <= k; ++i) {
             max_balance_after_buying = -prices[0];
             dp[i][0] = 0;
             for (j = 1; j < prices.size(); ++j) {
@@ -25,11 +29,11 @@ public:
             }
         }
         
-        return dp[k - 1][prices.size() - 1];
+        return dp[k][prices.size() - 1];
     }
 };
 
-#define EXAMPLE 2
+#define EXAMPLE 1
 
 int main() {
     Solution s;
