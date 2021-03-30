@@ -1,7 +1,3 @@
-## TODO
-
-* Implement an optimized version of DP.
-
 ## Brief Description
 
 ### dp.cpp
