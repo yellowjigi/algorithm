@@ -31,8 +31,8 @@ public:
             yesterday = today;
         }
         
-        // Think of `today` at this point as the `prices.size()`th day.
-        // What we need is `prices.size() - 1`th day.
+        // Think of `today` at this point as `dp[prices.size()]` of the unoptimized version.
+        // What we need to return is `dp[prices.size() - 1]`, so `yesterday`.
         return yesterday;
     }
 };
