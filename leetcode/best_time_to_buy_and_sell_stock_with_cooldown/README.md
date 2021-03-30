@@ -4,7 +4,7 @@
 
 * `dp[k][i]` denotes a maximum possible profit up to the `i`th day with (at most) `k` transactions.
 * First see the step-by-step logic for `k = 2`: [best_time_to_buy_and_sell_stock_iii](https://github.com/yellowjigi/algorithm/tree/main/leetcode/best_time_to_buy_and_sell_stock_iii).
-* The logic is the same as the `k = 2` one above except that:
+* The logic is the same as the one for `k = 2` above except that:
 	* We can implement the concept of "no limit in `k`" by removing the first dimension from `dp`. As a result, `dp[k][i]` becomes `dp[i]` which now denotes a maximum possible profit up to the `i`th day with as many transactions as possible.
 	* `i - 2` is used instead of `i - 1` in updating `max_balance_after_buying` in the `for` loop because now there needs to be a day for cooldown.
 * Return `dp[prices.size() - 1]` which indicates the maximum possible profit up to the last day with as many transactions as possible.
